@@ -14,7 +14,6 @@ class AlertMessage extends HTMLElement {
         const type = this.getAttribute('type') || 'info';
         const message = this.getAttribute('message') || '';
 
-        // Estilos dinámicos según el tipo de alerta
         const styles = {
             success: 'background-color: #d4edda; color: #155724;',
             warning: 'background-color: #fff3cd; color: #856404;',
@@ -55,7 +54,6 @@ class AlertMessage extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'message') {
-            // Si no hay mensaje, oculta la alerta
             if (!newValue) {
                 this.style.display = 'none';
             } else {

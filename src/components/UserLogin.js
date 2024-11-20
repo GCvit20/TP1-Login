@@ -96,16 +96,13 @@ class UserLogin extends HTMLElement {
     submitForm(event) {
         event.preventDefault();
 
-        // Obtener valores del formulario
         const username = this.shadowRoot.getElementById('username').value;
         const password = this.shadowRoot.getElementById('password').value;
 
-        // Validación básica de credenciales
         let result = 'error';
         if (username === 'admin' && password === 'admin') {
             result = 'success';
         }
-
 
         // Emitir el evento personalizado
         this.dispatchEvent(new CustomEvent('login-result', {
