@@ -52,7 +52,7 @@ class AlertMessage extends HTMLElement {
         `;   
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback(name, newValue) {
         if (name === 'message') {
             if (!newValue) {
                 this.style.display = 'none';
